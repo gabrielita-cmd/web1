@@ -1,0 +1,62 @@
+!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ambiente - Mundo infantil</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Recreacion </h1>
+        <nav>
+            <button onclick="location.href='../index.html'">Inicio</button>
+        </nav>
+    </header>
+    <main>
+        <h2>Recreacion</h2>
+        <p>......</p>
+        
+     
+        <div class="gallery">
+            <div class="thumbnail">
+                <img src="/images/recreo1.jpeg" alt="1 ">
+                <p>toma 1</p>
+            </div>
+            <div class="thumbnail">
+                <img src="/images/recreo2.jpeg" alt="2">
+                <p>toma 2</p>
+            </div>
+            <div class="thumbnail">
+                <img src="/images/recreo3.jpeg" alt="3">
+                <p>toma 3 </p>
+            </div>
+            <div class="thumbnail">
+                <img src="/images/recreo4.jpeg" alt="4 ">
+                <p>toma4 </p>
+            </div>
+        </div>
+        
+        
+        <div id="largeImageContainer">
+            <img id="largeImage" src="" alt="">
+        </div>
+    </main>
+    <footer>
+        <p>&copy; Mundo infantil</p>
+    </footer>
+    <script>
+        
+        const thumbnails = document.querySelectorAll('.thumbnail img');
+        const largeImageContainer = document.getElementById('largeImageContainer');
+        const largeImage = document.getElementById('largeImage');
+
+        thumbnails.forEach(thumbnail => {
+            thumbnail.addEventListener('click', function() {
+                largeImage.src = this.src.replace('thumb', 'large');
+                largeImage.alt = this.alt;
+                largeImageContainer.style.display = 'block';
+            });
+        });
+    </script>
+</body>
+</html>

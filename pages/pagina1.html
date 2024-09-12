@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ambiente - Mundo infantil</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Ambiente</h1>
+        <nav>
+            <button onclick="location.href='../index.html'">Inicio</button>
+        </nav>
+    </header>
+    <main>
+        <h2>Ambiente</h2>
+        <p>El ambiente de aprendizaje en preescolar desempeña un papel vital en el desarrollo de los niños. Proporciona oportunidades para la estimulación sensorial y ...</p>
+        
+       
+        <div class="gallery">
+            <div class="thumbnail">
+                <img src="/images/ambiente1.jpeg" alt="1">
+                <p>ambiente1</p>
+            </div>
+            <div class="thumbnail">
+                <img src="/images/ambiente2.jpeg" alt="2">
+                <p>ambiente2</p>
+            </div>
+            <div class="thumbnail">
+                <img src="/images/ambiente3.jpeg" alt="3">
+                <p>ambiente3</p>
+            </div>
+            <div class="thumbnail">
+                <img src="/images/ambiente4.jpeg" alt="4">
+                <p>ambiente4</p>
+            </div>
+        </div>
+        
+      
+        <div id="largeImageContainer">
+            <img id="largeImage" src="" alt="">
+        </div>
+    </main>
+    <footer>
+        <p>&copy; Mundo infantil</p>
+    </footer>
+    <script>
+       
+        const thumbnails = document.querySelectorAll('.thumbnail img');
+        const largeImageContainer = document.getElementById('largeImageContainer');
+        const largeImage = document.getElementById('largeImage');
+
+        thumbnails.forEach(thumbnail => {
+            thumbnail.addEventListener('click', function() {
+                largeImage.src = this.src.replace('thumb', 'large');
+                largeImage.alt = this.alt;
+                largeImageContainer.style.display = 'block';
+            });
+        });
+    </script>
+</body>
+</html>
